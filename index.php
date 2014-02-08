@@ -21,10 +21,6 @@
 			<button class="guest-rsvp-no">Respectfully, No</button>
 		</div>
 
-		<div class="no-show" style="display: none;">
-			<p>We're sorry to hear that. You'll be there in spirit. Thanks for letting us know!</p>
-		</div>
-
 		<div class="attending" style="display: none;">
 			<p>Great to have you with us! Your party calls for <span class="guestmeals"></span> guests.</p>
 
@@ -40,7 +36,12 @@
 
 		<div class="step-3" style="display: none;">
 			<h2>Thank You</h2>
-			<p>Thanks for RSVPing. See you on May 10!</p>
+			<div class="attending" style="display: none;">
+				<p>Thanks for RSVPing. See you on May 10!</p>
+			</div>
+			<div class="no-show" style="display: none;">
+				<p>We're sorry to hear that. You'll be there in spirit. Thanks for letting us know!</p>
+			</div>
 		</div>
 
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>

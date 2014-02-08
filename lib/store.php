@@ -8,10 +8,12 @@ if (mysqli_connect_errno()){
 
 // Get values from POST
 $id = $_POST["id"];
+$attending = $_POST["attending"];
 $guestemail = $_POST["guest_email"];
 
+
 // Update row based on ID
-mysqli_query($con,"UPDATE guests SET GUEST_EMAIL='$guestemail' WHERE GUEST_ID=$id");
+mysqli_query($con,"UPDATE guests SET GUEST_EMAIL='$guestemail', ATTENDING='$attending' WHERE GUEST_ID=$id");
 
 // Close connection
 mysqli_close($con);
