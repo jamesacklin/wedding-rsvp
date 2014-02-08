@@ -22,7 +22,15 @@
 		</div>
 
 		<div class="attending" style="display: none;">
-			<p>Great to have you with us! Your party calls for <span class="guestmeals"></span> guests.</p>
+			<p>Great to have you with us!</p>
+
+			<p>Your party allows for <span class="guestmeals"></span> people (including yourself). How many of you are attending?</p>
+			<div class="row">
+				<label for="ingroup">
+					Party Size
+					<input type="number" class="ingroup" name="ingroup" min="1" />
+				</label>
+			</div>
 
 			<div class="row">
 				<label for="guestemail">Email Address

@@ -11,14 +11,15 @@ $(document).ready(function(){
 
 	// Handle RSVP Yes.
 	$('.guest-rsvp-yes').click(function(){
-		attendanceStatus(1);
+		// At the very least, one person is attending.
+		attendanceNumber(1);
 		$('.basic-rsvp').hide();
 		$('.attending').show();
 	});
 
 	// Handle RSVP No.
 	$('.guest-rsvp-no').click(function(){
-		attendanceStatus(0);
+		attendanceNumber(0);
 		saveIt();
 		$('.basic-rsvp').hide();
 		$('.no-show').show();
@@ -26,12 +27,14 @@ $(document).ready(function(){
 
 	// Handle RSVP submit.
 	$('.guest-submit').click(function(){
+		var newValue = $('.ingroup').val();
+		attendanceNumber(newValue);
 		saveIt();
 	});
 
 	// Change attendance status.
-	function attendanceStatus(status){
-		attending = status;
+	function attendanceNumber(number){
+		attending = number;
 	}
 
 	// Loookup row #
@@ -49,8 +52,16 @@ $(document).ready(function(){
 	function renderValues(name, meals, email){
 		$('.guestname').text(name);
 		$('.guestmeals').text(meals);
+		$('.ingroup').val(meals).attr('max',meals);
 		$('.guestemail').val(email);
 	}
+
+	// Change "attending" value based on number the invitee says are coming
+	$('.ingroup').change(function(){
+		var newValue = $(this).val();
+		attendanceNumber(newValue);
+	});
+
 
 	// AJAX post to store values
 	function saveIt(){
