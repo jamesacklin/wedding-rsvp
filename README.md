@@ -6,4 +6,4 @@ Invitees will receive a printed invitation in the mail with a "Guest Number," wh
 
 There are obviously better ways to do this (snail mail + SASEs, Google Forms / Sheets, MailChimp, et al) but I want to build this from the bottom up and make it extensible to other dev's weddings. Hopefully I can build a nice front-end to make checking up on RSVP status easier.
 
-Inspired in part by (Jonnie Hallman's post)[http://destroytoday.com/blog/wedding-tech/] on the tech for his wedding.
+Inspired in part by [Jonnie Hallman's post](http://destroytoday.com/blog/wedding-tech/) on the tech for his wedding.
