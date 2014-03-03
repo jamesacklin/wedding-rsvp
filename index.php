@@ -30,22 +30,22 @@
 				<p>Great to have you with us!</p>
 				<p>Your party allows for <span class="guestmeals"></span> people (including yourself). How many of you are attending?</p>
 
-				<div class="form-group party-size">
-					<label for="ingroup">Party Size</label>
-					<input type="number" class="ingroup form-control" name="ingroup" min="1" />
-				</div>
+				<form class="meal-form">
+					<div class="form-group party-size">
+						<label for="ingroup">Party Size</label>
+						<input type="number" class="ingroup form-control" name="ingroup" min="1" />
+					</div>
 
-				<div class="individual-responses row">
-				</div>
+					<div class="individual-responses row">
+					</div>
 
-				<div class="form-group email-address">
-					<label for="guestemail">Email Address</label>
-					<input type="email" name="guestemail" class="guestemail form-control" placeholder="e.g., name@gmail.com">
-				</div>
+					<div class="form-group email-address">
+						<label for="guestemail">Email Address</label>
+						<input type="email" name="guestemail" class="guestemail form-control" placeholder="e.g., name@gmail.com">
+					</div>
 
-				<div class="debug"></div>
-
-				<button class="guest-submit btn btn-primary">RSVP</button>
+					<input type="submit" class="guest-submit btn btn-primary" value="RSVP" />
+				</form>
 
 			</div>
 		</div>
@@ -71,11 +71,13 @@
 				</div>
 				<div class="panel-body">
 					<div class="form-group">
-						<label for="attendee-name">Name</label>
-						<input type="text" id="attendee-name-" class="attendee-name form-control" name="attendee-name-">
+						<label for="attendee-name" class="control-label">Name</label>
+						<input type="text" id="attendee-name-" class="attendee-name form-control" name="attendee-name-" required>
+					</div>
+					<div class="form-group">
 						<div class="radio">
 							<label>
-								<input type="radio" name="meal-option-" value="chicken">
+								<input type="radio" name="meal-option-" value="chicken" required>
 								Chicken
 							</label>
 						</div>

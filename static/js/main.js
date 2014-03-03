@@ -88,15 +88,19 @@ $(document).ready(function(){
 
 
 	// Handle RSVP submit.
-	$('.guest-submit').click(function(){
+	$('.meal-form').submit(function(event){
+		event.preventDefault();
 		var finalCount = $('.ingroup').val();
 		defHeadcount(finalCount);
 		tallyMeals();
-		saveIt();
+		if($('form')[0].checkValidity()) {
+       saveIt();
+    }
 	});
 
+
 	// AJAX post to store values
-	function saveIt(){
+	function saveIt(event){
 		var idToSubmit = $('.guestinput').val();
 		var newemail = $('input[name=guestemail]').val();
 		var dataString = 'id=' + idToSubmit + '&attending=' + headcount + '&meals=' + mealList + '&guest_email=' + newemail;
@@ -113,7 +117,7 @@ $(document).ready(function(){
 
 	// Handle RSVP No.
 	$('.guest-rsvp-no').click(function(){
-		attendanceNumber(0);
+		defHeadcount(0);
 		saveIt();
 		$('.basic-rsvp').hide();
 		$('.no-show').show();
